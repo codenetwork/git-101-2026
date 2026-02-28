@@ -37,7 +37,14 @@ jobs:
 
     - name: Create HTML page
       run: |
-        CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+        DAY=$(TZ='Etc/GMT-10' date '+%-d')
+        case $DAY in
+          1|21|31) SUFFIX="st";;
+          2|22) SUFFIX="nd";;
+          3|23) SUFFIX="rd";;
+          *) SUFFIX="th";;
+        esac
+        CURRENT_DATE=$(TZ='Etc/GMT-10' date "+${DAY}${SUFFIX} %B %Y, %H:%M:%S GMT+10")
         cat > output/index.html << EOF
         <!DOCTYPE html>
         <html lang="en">
