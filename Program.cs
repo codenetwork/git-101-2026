@@ -5,6 +5,7 @@
     "Ryan Chang",
     "Bart Simpson",
     "Shrek",
+     "Inano"
     // Add your name above this line! (Do not delete this)
 ];
 
