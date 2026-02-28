@@ -16,8 +16,9 @@ Console.WriteLine("""
 """);
 Console.WriteLine("Welcome to the Git 101 Workshop for Code Network!");
 Console.WriteLine("\nThese are the awesome coders that attended this workshop:");
+Console.WriteLine("================================================================");
 
 foreach (string attendee in attendees)
 {
-    Console.WriteLine(attendee);
+    Console.WriteLine($"- {attendee}");
 }
