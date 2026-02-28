@@ -37,7 +37,8 @@ jobs:
 
     - name: Create HTML page
       run: |
-        cat > output/index.html << 'EOF'
+        CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+        cat > output/index.html << EOF
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -84,7 +85,7 @@ jobs:
             <h1>🎓 Git 101 Workshop Attendees</h1>
             <pre id="output">Loading...</pre>
             <div class="footer">
-                <p>Last updated: $(date)</p>
+                <p>Last updated: ${CURRENT_DATE}</p>
                 <p>Generated from <a href="https://github.com/${{ github.repository }}">${{ github.repository }}</a></p>
             </div>
             <script>
