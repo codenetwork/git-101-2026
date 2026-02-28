@@ -3,8 +3,9 @@
     "William Qu",
     "Angus Wong",
     "Ryan Chang",
-    "Bart Simpsop"
-    // Add your name here!
+    "Bart Simpson",
+    "Shrek",
+    // Add your name above this line! (Do not delete this)
 ];
 
 Console.WriteLine("Hello World!");
