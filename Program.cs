@@ -2,6 +2,7 @@
 [
     "William Qu",
     "Angus Wong",
+    "Ryan Chang"
     // Add your name here!
 ];
 
