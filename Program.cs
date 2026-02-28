@@ -3,9 +3,7 @@
     "William Qu",
     "Angus Wong",
     "Ryan Chang",
-    "Bart Simpson",
-    "Shrek",
-     "Inano"
+    "Ethan Burnet",
     // Add your name above this line! (Do not delete this)
 ];
 
