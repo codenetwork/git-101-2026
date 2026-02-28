@@ -1,0 +1,114 @@
+name: Build and Publish to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build project
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Run and capture output
+      run: |
+        mkdir -p output
+        dotnet run --no-build --configuration Release > output/program-output.txt
+
+    - name: Create HTML page
+      run: |
+        cat > output/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Git 101 Workshop - Attendees</title>
+            <style>
+                body {
+                    font-family: 'Courier New', monospace;
+                    background-color: #0d1117;
+                    color: #c9d1d9;
+                    padding: 40px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                h1 {
+                    color: #58a6ff;
+                    text-align: center;
+                }
+                pre {
+                    background-color: #161b22;
+                    border: 1px solid #30363d;
+                    border-radius: 6px;
+                    padding: 20px;
+                    overflow-x: auto;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                }
+                .footer {
+                    text-align: center;
+                    margin-top: 40px;
+                    color: #8b949e;
+                }
+                a {
+                    color: #58a6ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>🎓 Git 101 Workshop Attendees</h1>
+            <pre id="output">Loading...</pre>
+            <div class="footer">
+                <p>Last updated: $(date)</p>
+                <p>Generated from <a href="https://github.com/${{ github.repository }}">${{ github.repository }}</a></p>
+            </div>
+            <script>
+                fetch('program-output.txt')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('output').textContent = data;
+                    })
+                    .catch(error => {
+                        document.getElementById('output').textContent = 'Error loading output: ' + error;
+                    });
+            </script>
+        </body>
+        </html>
+        EOF
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './output'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
