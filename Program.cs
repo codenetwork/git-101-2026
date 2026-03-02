@@ -4,6 +4,7 @@
     "Angus Wong",
     "Ryan Chang",
     "Ethan Burnet",
+    "Aidan Inglis",
     "Christopher Rudel",
     "Nikita Bukhtoiarov",
     "Spongebob Squarepants",
