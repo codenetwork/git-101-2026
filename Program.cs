@@ -20,8 +20,8 @@
     "Kenneth",
     "Sean!!!",
     "Jeffrey Chan",
-    // Add your name above this line! (Do not delete this)
     "Teppei",
+    // Add your name above this line! (Do not delete this)
 ];
 
 Console.WriteLine("Hello World!");
