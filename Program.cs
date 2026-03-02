@@ -11,9 +11,20 @@
     "Spongebob Squarepants",
     "Inano",
     "Kevin",
-    "Ethan Burnet",
+    "Liam McCallum",
+    "monique soth",
+    "Aidan Smith",
+  	"Hamid",
+    "Alan",
+    "Manny",
+    "Kenneth",
+    "Sean!!!",
+    "Jeffrey Chan",
+    "Teppei",
+    "Kris Hsu",
+    "Bharath Sampath",
     "Shreyash Turai",
-    "Minh Trung"
+    "Minh Trung",
     // Add your name above this line! (Do not delete this)
 ];
 
