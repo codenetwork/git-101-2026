@@ -5,6 +5,9 @@
     "Ryan Chang",
     "Ethan Burnet",
     "Nikita Bukhtoiarov",
+    "Spongebob Squarepants",
+    "Inano",
+    "Kevin",
     // Add your name above this line! (Do not delete this)
 ];
 
