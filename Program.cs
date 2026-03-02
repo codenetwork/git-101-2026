@@ -4,6 +4,8 @@
     "Angus Wong",
     "Ryan Chang",
     "Ethan Burnet",
+    "Dhruti Maniar",
+    "Aidan Inglis",
     "Christopher Rudel",
     "Nikita Bukhtoiarov",
     "Spongebob Squarepants",
@@ -14,16 +16,17 @@
     "Alan",
     "Manny",
     "Sean!!!"
+    "Jeffrey Chan",
     // Add your name above this line! (Do not delete this)
 ];
 
 Console.WriteLine("Hello World!");
 Console.WriteLine("""
-   ____                   _   _      _                      _
-  / ___|___   ___   ___  | \ | | ___| |___      _____  _ __| | __
- | |   / _ \ / _ \ / _ \ |  \| |/ _ \ __\ \ /\ / / _ \| '__| |/ /
- | |__| (_) | (_) | (_) || |\  |  __/ |_ \ V  V / (_) | |  |   <
-  \____\___/ \___/ \___/ |_| \_|\___|\__| \_/\_/ \___/|_|  |_|\_\
+   ____          _        _   _      _                      _
+  / ___|___   __| | ___  | \ | | ___| |___      _____  _ __| | __
+ | |   / _ \ / _` |/ _ \ |  \| |/ _ \ __\ \ /\ / / _ \| '__| |/ /
+ | |__| (_) | (_| |  __/ | |\  |  __/ |_ \ V  V / (_) | |  |   <
+  \____\___/ \__,_|\___| |_| \_|\___|\__| \_/\_/ \___/|_|  |_|\_\
 
 """);
 Console.WriteLine("Welcome to the Git 101 Workshop for Code Network!");
