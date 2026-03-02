@@ -1,9 +1,10 @@
-﻿string[] attendees = 
+﻿string[] attendees =
 [
     "William Qu",
     "Angus Wong",
     "Ryan Chang",
     "Ethan Burnet",
+    "Nikita Bukhtoiarov",
     "Spongebob Squarepants",
     "Inano",
     "Kevin",
