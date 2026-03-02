@@ -8,6 +8,7 @@
     "Inano",
     "Kevin",
     "Ethan Burnet"
+    "Alan"
     // Add your name above this line! (Do not delete this)
 ];
 
