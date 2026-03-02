@@ -15,6 +15,7 @@
   	"Hamid",
     "Alan",
     "Manny",
+    "Sean!!!",
     "Jeffrey Chan",
     // Add your name above this line! (Do not delete this)
 ];
