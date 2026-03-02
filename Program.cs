@@ -7,7 +7,8 @@
     "Shrek",
     "Inano",
     "Kevin",
-    "Ethan Burnet"
+    "Ethan Burnet",
+    "Monique Soth"
     // Add your name above this line! (Do not delete this)
 ];
 
