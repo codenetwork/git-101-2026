@@ -3,6 +3,8 @@
     "William Qu",
     "Angus Wong",
     "Ryan Chang",
+    "Ethan Burnet",
+    "Spongebob Squarepants",
     "Inano",
     "Kevin",
     "Ethan Burnet",
