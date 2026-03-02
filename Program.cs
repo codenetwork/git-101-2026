@@ -23,6 +23,8 @@
     "Teppei",
     "Kris Hsu",
     "Bharath Sampath",
+    "Shreyash Turai",
+    "Minh Trung",
     // Add your name above this line! (Do not delete this)
 ];
 
