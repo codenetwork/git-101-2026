@@ -5,7 +5,8 @@
     "Ryan Chang",
     "Inano",
     "Kevin",
-    "Ethan Burnet"
+    "Ethan Burnet",
+    "Liam McCallum",
     // Add your name above this line! (Do not delete this)
 ];
 
