@@ -3,8 +3,6 @@
     "William Qu",
     "Angus Wong",
     "Ryan Chang",
-    "Bart Simpson",
-    "Shrek",
     "Inano",
     "Kevin",
     "Ethan Burnet",
