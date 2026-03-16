@@ -27,7 +27,8 @@
     "Bharath Sampath",
     "Shreyash Turai",
     "Minh Trung",
-    "Atharv Singh Panwar"
+    "Atharv Singh Panwar",
+    "Ted"
     // Add your name above this line! (Do not delete this)
 ];
 
