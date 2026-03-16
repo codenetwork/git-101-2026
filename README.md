@@ -1,3 +1,4 @@
+
 # Git 101 Workshop - Code Network 2026
 
 Welcome to the Git 101 Workshop! This project is designed to teach Code Network members the fundamentals of using Git and GitHub for collaborative software development.
@@ -86,6 +87,7 @@ The traditional Git command-line tool. Best for understanding Git fundamentals.
    - Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
    - Generate a new token with `repo` scope
    - Keep the token handy for later use!
+   ![github-pat-howto](https://github.com/user-attachments/assets/66e78b13-2750-47bb-b062-ad5c9b6d2cdc)
 
 **Best for:** Learning Git fundamentals, available everywhere, most documentation uses this. Also supports complex operations that GUI tools sometimes don't support
 
@@ -154,7 +156,9 @@ string[] attendees =
 [
     "William Qu",
     "Angus Wong",
-    "Your Name Here",  // Add your name!
+    ...
+    "Your Name Here",  // Add your name here, and leave a trailing comma!
+    // Add your name above this line! (Do not delete this)
 ];
 ```
 
@@ -213,7 +217,13 @@ git push
 - Enter your **Personal Access Token** (the one you created earlier)
 - Press Enter to continue
 
+<img width="568" height="217" alt="Screenshot 2026-03-16 at 11 37 50 PM" src="https://github.com/user-attachments/assets/eec1fc31-f7d3-4b25-8cbe-c4ee7c81acb4" />
+
+
 **Note:** If you get an error saying "remote: Invalid username or token. Password authentication is not supported for Git operations.", don't worry! Your token may have expired. Just run `git push` again - you'll be asked for your credentials again. [Create a new PAT](#option-1-git-cli-command-line-interface---recommended-for-learning) and paste it in.
+
+<img width="567" height="154" alt="Screenshot 2026-03-17 at 12 09 18 AM" src="https://github.com/user-attachments/assets/561f3866-ba46-4e76-a384-2dc937778889" />
+
 
 ### Step 8: Create a Pull Request
 
@@ -243,7 +253,7 @@ cd git-101-2026
 ```bash
 git add Program.cs
 git commit -m "Add [Your Name] to attendees list"
-git push origin main
+git push
 ```
 
 **Create a pull request:**
