@@ -51,7 +51,8 @@ This is a simple C# console application that displays a welcome message and list
 ## Prerequisites
 
 Before starting, make sure you have:
-- [Git](https://git-scm.com/install) installed on your computer
+- [Git](https://git-scm.com/install) installed on your computer (**required for all options**)
+  - **Note:** Git CLI must be installed first, regardless of which Git tool you choose. GitHub Desktop is just a GUI wrapper around Git and requires Git to be already installed.
 - A [GitHub](https://github.com) account
 - _(Optional)_[.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) installed (to run the program)
 - A code editor (e.g., NotePad++, Visual Studio, VS Code, or Rider)
@@ -77,12 +78,16 @@ The traditional Git command-line tool. Best for understanding Git fundamentals.
    git --version
    ```
 3. Configure your identity:
-   ```bash
-   git config --global user.name "Your Name"
-   git config --global user.email "your.email@example.com"
-   ```
+    ```bash
+    git config --global user.name "Your Name"
+    git config --global user.email "your.email@example.com"
+    ```
+4. **Set up authentication for Git CLI:** If you're using HTTPS URLs to clone/push, you'll need a Personal Access Token (PAT). [Click here to create one](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
+   - Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - Generate a new token with `repo` scope
+   - Keep the token handy for later use!
 
-**Best for:** Learning Git fundamentals, available everywhere, most documentation uses this
+**Best for:** Learning Git fundamentals, available everywhere, most documentation uses this. Also supports complex operations that GUI tools sometimes don't support
 
 ### Option 2: GitHub CLI - Advanced Command Line Tool
 
@@ -200,8 +205,15 @@ git commit -m "Add [Your Name] to attendees list"
 Push your changes to your forked repository on GitHub:
 
 ```bash
-git push origin main
+git push
 ```
+
+**First time using Git CLI?** You'll be prompted for authentication:
+- Enter your **GitHub username**
+- Enter your **Personal Access Token** (the one you created earlier)
+- Press Enter to continue
+
+**Note:** If you get an error saying "remote: Invalid username or token. Password authentication is not supported for Git operations.", don't worry! Your token may have expired. Just run `git push` again - you'll be asked for your credentials again. [Create a new PAT](#option-1-git-cli-command-line-interface---recommended-for-learning) and paste it in.
 
 ### Step 8: Create a Pull Request
 
@@ -276,36 +288,67 @@ If you chose GitHub Desktop, follow these steps:
 Here are some commands you'll find helpful:
 
 ```bash
-git status              # Check the status of your working directory
-git log                 # View commit history
-git diff                # See what changes you've made
-git branch              # List branches
-git checkout -b <name>  # Create and switch to a new branch
-git pull origin main    # Get latest changes from remote
+# Basic workflow
+git add <filename>              # Stage a file for commit (replace <filename> with the file you want to commit)
+git add .                       # Stage all changes
+git commit -m "message"         # Create a commit with message
+git push                        # Push to remote repository
+git pull <remote> <branch>      # Pull latest changes from remote (<remote> = remote alias like "origin", <branch> = branch name)
+
+# View and manage
+git status                      # Check the status of your working directory
+git log                         # View commit history
+git diff                        # See what changes you've made
+git branch                      # List branches
+git checkout -b <branch>          # Create and switch to a new branch
+git checkout <branch>             # Switch to an existing branch
+git checkout <commit>             # Switch to a specific commit (replace <commit> with commit hash)
+git remote -v                     # View your remotes (origin, upstream)
+
+# Update your fork
+git fetch <remote>               # Get latest changes from remote repo (e.g., upstream)
+git merge <remote>/<branch>      # Merge changes into your current branch (e.g., upstream/main)
+
+# Undo mistakes (use carefully!)
+git reset --soft HEAD~1         # Undo last 1 commit (keeps staged changes)
+git stash                       # Temporarily save uncommitted changes (removes them from working directory, stores on stack)
+git stash pop                   # Restore stashed changes back to working directory and remove from stack
 ```
 
 ### GitHub CLI Commands
 
-If you're using GitHub CLI:
+If you're using GitHub CLI, here are some commands:
 
 ```bash
-gh repo view            # View repository details
-gh pr list              # List your pull requests
-gh pr status            # Check status of your PRs
-gh pr checks            # See PR check status
-gh issue list           # View issues
-gh repo sync            # Sync your fork with upstream
+# Fork and clone
+gh repo fork <repo> --clone      # Fork a repo and clone it locally (replace <repo> with repo URL)
+
+# Pull requests
+gh pr create                     # Create a pull request
+gh pr list                       # List your pull requests
+gh pr status                     # Check status of your PRs
+gh pr view --web                 # View a PR in the browser
+
+# Issues
+gh issue list                    # View issues
+gh issue create                  # Create a new issue
+
+# Repository management
+gh repo view                     # View repository details
+gh repo sync                     # Sync your fork with upstream
 ```
 
 ### GitHub Desktop
 
-In GitHub Desktop:
-- **View changes:** Changes tab shows modified files
-- **View history:** History tab shows commits
-- **Create branch:** Branch menu → New Branch
-- **Switch branches:** Click current branch dropdown
-- **Pull changes:** Click "Fetch origin" then "Pull origin"
-- **View conflicts:** Conflicted files show in Changes tab with "Open in editor" option
+In GitHub Desktop, you can manage your workflow visually:
+
+- **View changes:** Changes tab shows modified files and their status
+- **View history:** History tab displays all your commits with details
+- **Create branch:** Branch menu → New Branch (or use the branch dropdown)
+- **Switch branches:** Click current branch dropdown to select a branch
+- **Pull changes:** File menu → Pull, or click "Fetch origin" then "Pull origin" button (pulls from your fork to local)
+- **Push changes:** File menu → Push, or click "Push origin" button (pushes from local to your fork only)
+- **View conflicts:** Conflicted files appear in Changes tab with "Open in editor" option
 
 ## Troubleshooting
 
@@ -335,6 +378,16 @@ Same as Git CLI - GitHub CLI uses standard Git for conflict resolution
 5. Return to GitHub Desktop - it will detect the resolution
 6. Click "Commit merge" to complete the resolution
 
+**Resolve on GitHub Website**
+You can also resolve conflicts directly in your browser:
+1. Go to the Pull Request page on GitHub
+2. Scroll down to see the conflict markers in the file diff
+3. Use GitHub's inline editor to resolve each conflict
+4. Click "Keep both version" if you want to merge both changes
+5. Or choose one version (yours or theirs) as needed
+6. After resolving all conflicts, click "Mark conversation as resolved"
+7. Commit the changes from the Pull Request page
+
 ### Need to Update Your Fork?
 
 If the original repository has new changes:
@@ -361,10 +414,16 @@ gh repo sync
 3. Or use Repository → Repository Settings → Remote to add upstream
 4. Then fetch and merge from Branch menu
 
+**Using GitHub Website:**
+1. Go to your fork on GitHub
+2. Click the green "Sync fork" button (if available)
+3. After syncing, click "Update Branch" button that appears
+
 ## Contributing Guidelines
 
 - Use your real name or preferred name
 - Be respectful and supportive of other learners
+- Join our [Code Network Discord](https://discord.gg/RPGhVfJUD8) for support and discussions
 
 ## Questions?
 
