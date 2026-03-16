@@ -1,4 +1,3 @@
-
 # Git 101 Workshop - Code Network 2026
 
 Welcome to the Git 101 Workshop! This project is designed to teach Code Network members the fundamentals of using Git and GitHub for collaborative software development.
