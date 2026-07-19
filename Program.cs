@@ -3,8 +3,7 @@
     "William Qu",
     "Angus Wong",
     "Ryan Chang",
-    "Bart Simpson",
-    "Shrek",
+    "Mandeep Gautam",
     // Add your name above this line! (Do not delete this)
 ];
 
