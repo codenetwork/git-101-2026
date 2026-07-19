@@ -1,4 +1,4 @@
-﻿string[] attendees = 
+﻿string[] attendees =
 [
     "William Qu",
     "Angus Wong",
