@@ -5,6 +5,7 @@
     "Ryan Chang",
     "Mandeep Gautam",
     "Miguel Pineda",
+    "Rasmus Kromann",
     "Fabian Authen",
     "Jonathan Fedje",
     "Annie",
