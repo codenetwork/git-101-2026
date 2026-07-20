@@ -4,6 +4,7 @@
     "Angus Wong",
     "Ryan Chang",
     "Mandeep Gautam",
+    "Ila Cassagne",
     // Add your name above this line! (Do not delete this)
 ];
 
