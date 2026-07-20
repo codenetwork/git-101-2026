@@ -13,7 +13,6 @@
     "Ila Cassagne",
     "Chloe Flintoff",
     "Zara Ho",
-    "Thai Minh",
     // Add your name above this line! (Do not delete this)
 ];
 
